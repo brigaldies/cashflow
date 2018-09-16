@@ -28,6 +28,7 @@ def load_transactions(filename, starting_balance, days=30, debug=False):
     tx_df = pd.DataFrame(
         columns=[
             'date',
+            'date_ts',
             'item',
             'item_type',
             'amount',
@@ -121,6 +122,7 @@ def add_transactions_interval(row, days, end_date, tx_df, debug=False):
             if debug: print('\t[{}] Next event: {}'.format(i, next_date))
             tx_df.loc[tx_df_idx] = [
                 next_date,
+                next_date.timestamp(),
                 row['item'],
                 row['item_type'],
                 row['amount'],
@@ -160,6 +162,7 @@ def add_transactions_twice_a_month(row, days, end_date, tx_df, debug=False):
                     if debug: print('\t[{}] Next event: {}'.format(i, next_date))
                     tx_df.loc[tx_df_idx] = [
                         next_date,
+                        next_date.timestamp(),
                         row['item'],
                         row['item_type'],
                         row['amount'],
@@ -181,6 +184,7 @@ def add_transactions_twice_a_month(row, days, end_date, tx_df, debug=False):
                     if debug: print('\t[{}] Next event: {}'.format(i, next_date))
                     tx_df.loc[tx_df_idx] = [
                         next_date,
+                        next_date.timestamp(),
                         row['item'],
                         row['item_type'],
                         row['amount'],
@@ -218,6 +222,7 @@ def add_transactions_cronite(row, days, end_date, tx_df, debug=False):
             if debug: print('\t[{}] Next event: {}'.format(i, next_date))
             tx_df.loc[tx_df_idx] = [
                 next_date,
+                next_date.timestamp(),
                 row['item'],
                 row['item_type'],
                 row['amount'],
@@ -244,6 +249,7 @@ def add_transactions_one_time(row, days, end_date, tx_df, debug=False):
     if next_date >= now and next_date <= end_date:
         tx_df.loc[tx_df_idx] = [
             next_date,
+            next_date.timestamp(),
             row['item'],
             row['item_type'],
             row['amount'],
