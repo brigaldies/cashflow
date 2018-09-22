@@ -6,25 +6,14 @@ import numpy as np
 import pandas as pd
 
 
-def load_transactions(filename, starting_balance, days=30, debug=False):
+def load_transactions(transactions_df, starting_balance, days=30, debug=False):
     """
-    Load the transactions from an Excel spreadsheet into a Pandas data frame sorted and indexed by transaction date asc.
-    :param filename: Excel spreadsheet that contains the transactions.
+    Load the raw transactions into a Pandas data frame sorted and indexed by transaction date asc.
+    :param transactions_df: Data frame that contains the raw transactions.
     :param days: Number of days in the future to build the transactions for.
     :param debug: Debug flag.
     :return: A Pandas dataframe that contains the transactions for the next <days> days.
     """
-    print('Loading transactions from pathname {}...'.format(filename))
-
-    # Load the Excel file
-    xlsx = pd.ExcelFile(filename)
-
-    # Load the designated Excel sheet into a Pandas dataframe
-    excel_df = pd.read_excel(xlsx, sheet_name='transactions', header=1)
-
-    # Print some info for debugging
-    if debug: print(excel_df.info())
-
     tx_df = pd.DataFrame(
         columns=[
             'date',
@@ -36,7 +25,7 @@ def load_transactions(filename, starting_balance, days=30, debug=False):
         ]
     )
 
-    print('Transactions count: {}'.format(excel_df.shape[0]))
+    print('Transactions count: {}'.format(transactions_df.shape[0]))
     print('Starting balance  : {}'.format(np.round(starting_balance, 2)))
     print('Days in the future: {}'.format(days))
     now = datetime.datetime.now()
@@ -44,8 +33,12 @@ def load_transactions(filename, starting_balance, days=30, debug=False):
     print('Date interval     : From {} to {}'.format(now, end_date))
 
     # Process each row
-    for index, row in excel_df.iterrows():
+    for index, row in transactions_df.iterrows():
         if debug: print('\n{}: {}'.format(index, row))
+
+        if not int(row['enabled']):
+            print('Row {} disabled.'.format(row))
+            continue
 
         schedule_type = str(row['schedule_type']).lower()
 

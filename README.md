@@ -53,3 +53,10 @@ The notebook loads the transactions from a specified Excel file pathname, and pl
 of processing ("now") and a specified number of days in the future.
 
 TODO: Show a screen shot.
+
+### Google Sheets Access
+
+To access your cash flow transactions from a Google sheet instead, follow the instructions in the link below to establish
+the access credentials:
+
+See [setup tutorial](https://www.youtube.com/watch?v=7I2s81TsCnc)

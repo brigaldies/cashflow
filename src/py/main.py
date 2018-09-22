@@ -1,6 +1,8 @@
 import argparse
 
 import expenses.transactions
+import utils.excel_sheet as excel_sheet
+import utils.google_sheet as google_sheet
 
 if __name__ == "__main__":
     """
@@ -12,7 +14,13 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    transactions_df = expenses.transactions.load_transactions(args.transactions, starting_balance=6119.30, days=90)
+    # Load the transactions from an Excel sheet
+    # raw_transactions_df = excel_sheet.excel_load_transactions(args.transactions, debug=True)
+
+    # Load the transactions from a Google sheet
+    raw_transactions_df = google_sheet.gspread_load_transactions()
+
+    transactions_df = expenses.transactions.load_transactions(raw_transactions_df, starting_balance=6119.30, days=90, debug=True)
 
     print('\nDate-sorted transactions:')
     print(transactions_df.info())
