@@ -10,13 +10,10 @@ scope = [
     'https://www.googleapis.com/auth/drive'
 ]
 
-# DO NOT CHECK-IN!
-google_api_file = 'cashflow-e30812754233.json'
 
-
-def gspread_load_transactions(debug=False):
+def gspread_load_transactions(google_api_file_pathname, debug=False):
     print('Retrieve Google API credentials...')
-    credentials = ServiceAccountCredentials.from_json_keyfile_name(google_api_file, scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_name(google_api_file_pathname, scope)
 
     print('Authorizing with Google API credentials...')
     gc = gspread.authorize(credentials)
