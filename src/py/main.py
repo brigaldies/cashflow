@@ -32,4 +32,13 @@ if __name__ == "__main__":
     print('\nDate-sorted transactions:')
     print(transactions_df.info())
     print(transactions_df.shape)
-    print(transactions_df)
+    # print(transactions_df)
+    # for index, row in transactions_df.iterrows():
+    #     print('Index={}, rows={}'.format(index, row))
+
+    # Index the transactions in Elasticsearch
+    import utils.search as search
+    es = search.connect()
+    search.create_index(es, "cashflow")
+    search.index_transactions(es, "cashflow", transactions_df)
+
