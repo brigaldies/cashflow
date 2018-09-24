@@ -6,7 +6,7 @@
       "title": "Dashboard #1",
       "hits": 0,
       "description": "First dashboard",
-      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":15,\"i\":\"2\"},\"id\":\"f9ffc190-bf5a-11e8-a570-efa0e484ca3c\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.4.1\"},{\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":15,\"i\":\"3\"},\"version\":\"6.4.1\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"id\":\"2bd5c0e0-bf5e-11e8-a570-efa0e484ca3c\",\"embeddableConfig\":{}}]",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":15,\"w\":17,\"h\":15,\"i\":\"2\"},\"id\":\"f9ffc190-bf5a-11e8-a570-efa0e484ca3c\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.4.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":15,\"i\":\"3\"},\"id\":\"2bd5c0e0-bf5e-11e8-a570-efa0e484ca3c\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.4.1\"},{\"embeddableConfig\":{\"vis\":{\"colors\":{\"credit\":\"#7EB26D\",\"debit\":\"#E24D42\"},\"legendOpen\":true}},\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":15,\"i\":\"4\"},\"id\":\"ebf3e740-bf71-11e8-a438-252ce01acfc6\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.4.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":17,\"y\":15,\"w\":31,\"h\":15,\"i\":\"5\"},\"id\":\"45ae5f80-bf73-11e8-a438-252ce01acfc6\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.4.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":30,\"w\":48,\"h\":16,\"i\":\"6\"},\"id\":\"b758e110-bf59-11e8-a570-efa0e484ca3c\",\"panelIndex\":\"6\",\"type\":\"search\",\"version\":\"6.4.1\"}]",
       "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
       "version": 1,
       "timeRestore": true,
@@ -27,18 +27,21 @@
     "_source": {
       "title": "cash*",
       "timeFieldName": "date",
-      "fields": "[{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"amount\",\"type\":\"number\",\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"balance\",\"type\":\"number\",\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"date\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"item\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"item.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"item_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"item_type.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true}]"
+      "fields": "[{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"amount\",\"type\":\"number\",\"count\":4,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"balance\",\"type\":\"number\",\"count\":4,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"date\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"item\",\"type\":\"string\",\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"item.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"item_type\",\"type\":\"string\",\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"item_type.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true}]"
     }
   },
   {
     "_id": "b758e110-bf59-11e8-a570-efa0e484ca3c",
     "_type": "search",
     "_source": {
-      "title": "From now to Dec 31",
+      "title": "From now to 120 days out",
       "description": "",
       "hits": 0,
       "columns": [
-        "_source"
+        "item",
+        "item_type",
+        "amount",
+        "balance"
       ],
       "sort": [
         "date",
@@ -66,21 +69,6 @@
     }
   },
   {
-    "_id": "f9ffc190-bf5a-11e8-a570-efa0e484ca3c",
-    "_type": "visualization",
-    "_source": {
-      "title": "Balance min & max",
-      "visState": "{\"title\":\"Balance min & max\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"min\",\"schema\":\"metric\",\"params\":{\"field\":\"balance\",\"customLabel\":\"Min Balance\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"balance\",\"customLabel\":\"Max Balance\"}}]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "b758e110-bf59-11e8-a570-efa0e484ca3c",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
-      }
-    }
-  },
-  {
     "_id": "2bd5c0e0-bf5e-11e8-a570-efa0e484ca3c",
     "_type": "visualization",
     "_source": {
@@ -92,6 +80,49 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "f9ffc190-bf5a-11e8-a570-efa0e484ca3c",
+    "_type": "visualization",
+    "_source": {
+      "title": "KPIs",
+      "visState": "{\"title\":\"KPIs\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"min\",\"schema\":\"metric\",\"params\":{\"field\":\"balance\",\"customLabel\":\"Min Balance\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"balance\",\"customLabel\":\"Max Balance\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"balance\",\"customLabel\":\"Average Balance\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "b758e110-bf59-11e8-a570-efa0e484ca3c",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "ebf3e740-bf71-11e8-a438-252ce01acfc6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Credit vs. Debit",
+      "visState": "{\"title\":\"Credit vs. Debit\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"amount\",\"customLabel\":\"Credit vs. Debit\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"item_type.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Credit vs. Debit\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"credit\":\"#7EB26D\",\"debit\":\"#E24D42\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"b72a9000-bf57-11e8-a570-efa0e484ca3c\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "45ae5f80-bf73-11e8-a438-252ce01acfc6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Top 10 Transactions by Amount",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"customLabel\":\"Top 10 Transactions by Amount\",\"field\":\"item.keyword\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderAgg\":{\"enabled\":true,\"id\":\"2-orderAgg\",\"params\":{\"field\":\"amount\"},\"schema\":{\"aggFilter\":[\"!top_hits\",\"!percentiles\",\"!median\",\"!std_dev\",\"!derivative\",\"!moving_avg\",\"!serial_diff\",\"!cumulative_sum\",\"!avg_bucket\",\"!max_bucket\",\"!min_bucket\",\"!sum_bucket\"],\"deprecate\":false,\"editor\":false,\"group\":\"none\",\"hideCustomLabel\":true,\"max\":null,\"min\":0,\"name\":\"orderAgg\",\"params\":[],\"title\":\"Order Agg\"},\"type\":\"sum\"},\"orderBy\":\"custom\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":10},\"schema\":\"segment\",\"type\":\"terms\"}],\"params\":{\"maxFontSize\":72,\"minFontSize\":18,\"orientation\":\"single\",\"scale\":\"linear\",\"showLabel\":true},\"title\":\"Top 10 Transactions by Amount\",\"type\":\"tagcloud\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"b72a9000-bf57-11e8-a570-efa0e484ca3c\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
       }
     }
   }
