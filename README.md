@@ -80,7 +80,7 @@ From the command line, check the status of Elasticsearch with the following curl
 ## Visualization
 
 1. From your browser, connect to Kibana at [http://localhost:5601](http://localhost:5601).
-2. To to Management, and import the saved Kibana objects (Index patterns, filters, visualizations, and dashboards) from the file kibana_saved_objects_export.json in the project's root directory.
+2. Go to Management, and import the saved Kibana objects (Index patterns, filters, visualizations, and dashboards) from the file kibana_saved_objects_export.json in the project's root directory.
 
 # TODO
 
