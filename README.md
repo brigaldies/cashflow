@@ -85,3 +85,10 @@ From the command line, check the status of Elasticsearch with the following curl
 # TODO
 
 - Add a project's root directory parameter in config.cfg so that all directory paths are relative to the project's root.
+- FIXME: Our custom Jupyter docker image does not work because of the hard coded file path in search.py:
+
+```python
+from pathlib import Path
+home = str(Path.home())
+config_file_pathname = '{}/Documents/Personal/Budget/tools/cashflow/settings.cfg'.format(home)
+```

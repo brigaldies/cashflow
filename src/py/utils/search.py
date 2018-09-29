@@ -14,7 +14,17 @@ print('Home path: {}'.format(home))
 
 # Read the configuration
 config = configparser.ConfigParser()
-config_file_pathname = '{}/Documents/Personal/Budget/tools/cashflow/settings.cfg'.format(home)
+
+cwd = os.getcwd()
+config_file_pathname = 'settings.cfg'
+print('Current directory: {}'.format(cwd))
+if cwd.endswith('/notebooks'):
+    config_file_pathname = '../../../settings.cfg'
+elif cwd.endswith('/py'):
+    config_file_pathname = '../settings.cfg'
+
+# config_file_pathname = '{}/Documents/Personal/Budget/tools/cashflow/settings.cfg'.format(home)
+
 if not os.path.isfile(config_file_pathname):
     raise RuntimeError('Config file "{}" does not exist.'.format(config_file_pathname))
 print('Reading config from {}...'.format(config_file_pathname))
