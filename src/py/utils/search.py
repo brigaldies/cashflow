@@ -1,48 +1,13 @@
 import configparser
 import json
 import os
-from pathlib import Path
+
 import elasticsearch
 import elasticsearch.helpers
 from requests.auth import HTTPBasicAuth
 
-__all__ = ["ES_AUTH", "ES_URL"]
 
-# Get the user's $HOME
-home = str(Path.home())
-print('Home path: {}'.format(home))
-
-# Read the configuration
-config = configparser.ConfigParser()
-
-cwd = os.getcwd()
-config_file_pathname = 'settings.cfg'
-print('Current directory: {}'.format(cwd))
-if cwd.endswith('/notebooks'):
-    config_file_pathname = '../../../settings.cfg'
-elif cwd.endswith('/py'):
-    config_file_pathname = '../settings.cfg'
-
-# config_file_pathname = '{}/Documents/Personal/Budget/tools/cashflow/settings.cfg'.format(home)
-
-if not os.path.isfile(config_file_pathname):
-    raise RuntimeError('Config file "{}" does not exist.'.format(config_file_pathname))
-print('Reading config from {}...'.format(config_file_pathname))
-config.read(config_file_pathname)
-
-ES_URL = config['DEFAULT']['ES_URL']
-print('ES_URL={}'.format(ES_URL))
-
-if 'ES_USER' in config['DEFAULT']:
-    auth = (config['DEFAULT']['ES_USER'], config['DEFAULT']['ES_PASSWORD'])
-    ES_AUTH = HTTPBasicAuth(*auth)
-else:
-    auth = None
-    ES_AUTH = None
-print('ES_AUTH={}'.format(ES_AUTH))
-
-
-def connect(url=None, timeout=1000, http_auth=auth):
+def connect(url=None, timeout=1000):
     """
     Connect to Elasticsearch
     :param url: ES URL.
@@ -50,9 +15,36 @@ def connect(url=None, timeout=1000, http_auth=auth):
     :param http_auth: Credentials
     :return: Elasticsearch connection handle
     """
+    # Read the configuration
+    config = configparser.ConfigParser()
+
+    cwd = os.getcwd()
+    config_file_pathname = 'settings.cfg'
+    print('Current directory: {}'.format(cwd))
+    if cwd.endswith('/notebooks'):
+        config_file_pathname = '../../../settings.cfg'
+    elif cwd.endswith('/py'):
+        config_file_pathname = '../../settings.cfg'
+
+    if not os.path.isfile(config_file_pathname):
+        raise RuntimeError('Config file "{}" does not exist.'.format(config_file_pathname))
+    print('Reading config from {}...'.format(config_file_pathname))
+    config.read(config_file_pathname)
+
+    ES_URL = config['DEFAULT']['ES_URL']
+    print('ES_URL={}'.format(ES_URL))
+
+    if 'ES_USER' in config['DEFAULT']:
+        auth = (config['DEFAULT']['ES_USER'], config['DEFAULT']['ES_PASSWORD'])
+        ES_AUTH = HTTPBasicAuth(*auth)
+    else:
+        auth = None
+        ES_AUTH = None
+    print('ES_AUTH={}'.format(ES_AUTH))
+
     if url is None:
         url = ES_URL
-    es = elasticsearch.Elasticsearch(url, timeout=timeout, http_auth=http_auth)
+    es = elasticsearch.Elasticsearch(url, timeout=timeout, http_auth=ES_AUTH)
     print(json.dumps(es.info(), indent=4))
     return es
 
@@ -95,6 +87,7 @@ def index_transactions(es, index_name, transactions_df):
     :param transactions_df: Transactions dataframe.
     :return: None.
     """
+
     def bulkTransactions(transactions_df):
         """
         Loop over a transactions dataframe.

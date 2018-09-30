@@ -171,9 +171,7 @@ def add_transactions_twice_a_month(row, days, end_date, tx_df, debug=False):
             for i in np.arange(1, days):
                 month_range = calendar.monthrange(year, month)
                 next_date = datetime.datetime(year, month, month_range[1])
-                if next_date < now:
-                    continue
-                if next_date <= end_date:
+                if next_date >= now and next_date <= end_date:
                     if debug: print('\t[{}] Next event: {}'.format(i, next_date))
                     tx_df.loc[tx_df_idx] = [
                         next_date,
@@ -184,11 +182,11 @@ def add_transactions_twice_a_month(row, days, end_date, tx_df, debug=False):
                         0
                     ]
                     tx_df_idx += 1
-                    month = (month + 1) % 13
-                    if month == 0:
-                        month += 1
-                        year += 1
-                else:
+                month = (month + 1) % 13
+                if month == 0:
+                    month += 1
+                    year += 1
+                if next_date > end_date:
                     break
         else:
             raise RuntimeError('Unsupported "days_in_month" schedule expression syntax "{}".'.format(sched_expr))

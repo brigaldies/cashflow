@@ -27,7 +27,7 @@ if __name__ == "__main__":
         raw_transactions_df = google_sheet.gspread_load_transactions(
             google_api_file_pathname=args.googleapikey)
 
-    transactions_df = expenses.transactions.load_transactions(raw_transactions_df, starting_balance=6119.30, days=90, debug=False)
+    transactions_df = expenses.transactions.load_transactions(raw_transactions_df, starting_balance=3830.79, days=120, debug=False)
 
     print('\nDate-sorted transactions:')
     print(transactions_df.info())
